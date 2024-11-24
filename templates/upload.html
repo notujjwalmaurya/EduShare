@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">Upload Educational Resource</h1>
+    
+    <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-md">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+                Title
+            </label>
+            <input
+                type="text"
+                name="title"
+                class="w-full p-2 border rounded-md"
+                required
+            >
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+                Description
+            </label>
+            <textarea
+                name="description"
+                class="w-full p-2 border rounded-md"
+                rows="4"
+                required
+            ></textarea>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+                Category
+            </label>
+            <select
+                name="category"
+                class="w-full p-2 border rounded-md"
+            >
+                <option value="mathematics">Mathematics</option>
+                <option value="CS">Cs</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+                <option value="literature">Literature</option>
+            </select>
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-gray-700 text-sm font-bold mb-2">
+                Upload File
+            </label>
+            <input
+                type="file"
+                name="file"
+                class="w-full p-2 border rounded-md"
+                required
+            >
+        </div>
+
+        <button
+            type="submit"
+            class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+        >
+            Upload Resource
+        </button>
+    </form>
+</div>
+{% endblock %}
